@@ -1,22 +1,34 @@
 /**
  * Created by vincebloise on 7/4/16.
  */
-class Student {
+class Person {
     fullName: string;
     constructor(public firstName, public middleInitial, public lastName) {
         this.fullName = firstName + " " + middleInitial + " " + lastName;
     }
 }
 
-interface Person {
-    firstName: string;
-    lastName: string;
+class Greeter {
+    person: Person;
+    constructor(personParm: Person) {
+        this.person = personParm;
+    }
+    greet() {
+        return "Hello, " + this.person.firstName + " " + this.person.lastName;
+    }
+    static greet2(personParm: Person) {
+        return "Hello, " + personParm.firstName + " " + personParm.lastName + "<br/>";
+    }
 }
 
-function greeter(person: Person) {
-    return "Hello, " + person.firstName + " " + person.lastName;
-}
+var user = new Person("Marin", "E.", "Bloise");
+var greeter = new Greeter(user);
 
-var user = new Student("Marin", "E.", "Bloise");
+var button = document.createElement('button');
+button.textContent = "Say Yo!";
+button.onclick = function() {
+    alert(greeter.greet());
+};
 
-document.body.innerHTML = greeter(user);
+document.body.innerHTML = Greeter.greet2(user);
+document.body.appendChild(button);
