@@ -35,6 +35,16 @@ function calcTax(income: number, state: string = 'NY', dependents?: number): num
     }
 }
 
+function StockQuoteGeneratorArrow(symbol: string){
+    this.symbol = symbol;
+    setInterval(() => {
+        console.log("StockQuoteGeneratorArrow. The price quote for " + this.symbol
+            + " is " + Math.random());
+    }, 1000);
+}
+
+//var stockQuoteGeneratorArrow = new StockQuoteGeneratorArrow("IBM");
+
 var tax: number = calcTax(50000, 'NJ', 3);
 console.log("Your tax is " + tax);
 var tax: number = calcTax(50000);
@@ -53,4 +63,5 @@ button.onclick = function() {
 };
 
 document.body.innerHTML = Greeter.greet2(user);
+//document.body.innerHTML = stockQuoteGeneratorArrow();
 document.body.appendChild(button);
