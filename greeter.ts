@@ -21,6 +21,18 @@ class Greeter {
     }
 }
 
+class Peeps {
+    name: string;
+}
+
+class Employee extends Peeps{
+    department: number;
+}
+
+class Animal {
+    breed: string;
+}
+
 function calcTax(income: number, state: string = 'NY', dependents?: number): number{
     var deduction: number;
     if (dependents) {  // handle the optional value in dependents
@@ -61,6 +73,11 @@ button.textContent = "Say Yo!";
 button.onclick = function() {
     alert(greeter.greet());
 };
+
+var workers: Array<Peeps> = [];
+workers[0] = new Peeps();
+workers[1] = new Employee();
+//workers[2] = new Animal();  // compile-time error
 
 document.body.innerHTML = Greeter.greet2(user);
 //document.body.innerHTML = stockQuoteGeneratorArrow();
