@@ -1,10 +1,15 @@
 /**
  * Created by vincebloise on 7/4/16.
  */
-class Person {
-    fullName: string;
-    constructor(public firstName, public middleInitial, public lastName) {
-        this.fullName = firstName + " " + middleInitial + " " + lastName;
+interface IPerson {
+    firstName: string;
+    lastName: string;
+    age: number;
+    ssn?: string;
+}
+
+class Person  {
+    constructor(public config: IPerson) {
     }
 }
 
@@ -14,10 +19,10 @@ class Greeter {
         this.person = personParm;
     }
     greet() {
-        return "Hello, " + this.person.firstName + " " + this.person.lastName;
+        return "Hello, " + this.person.toString() + " " + this.person.toString();
     }
     static greet2(personParm: Person) {
-        return "Hello, " + personParm.firstName + " " + personParm.lastName + "<br/>";
+        return "Hello, " + personParm.toString() + " " + personParm.toString() + "<br/>";
     }
 }
 
@@ -65,7 +70,15 @@ console.log("Your tax is " + tax);
 var tax: number = calcTax(50000); //using default state parameter value and no dependents
 var tax2: number = calcTax(60000, 'NJ', 3);
 
-var user = new Person("Marin", "E.", "Bloise");
+var aPerson: IPerson = {
+    firstName: "John",
+    lastName: "Smith",
+    age: 29
+}
+
+var user = new Person(aPerson);
+console.log("Last name?: " + user.config.lastName );
+
 var greeter = new Greeter(user);
 
 var button = document.createElement('button');
