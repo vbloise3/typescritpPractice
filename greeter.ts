@@ -8,8 +8,16 @@ interface IPerson {
     ssn?: string;
 }
 
-class Person  {
+interface IPayable{
+    increasePay(percent: number): boolean
+}
+
+class Person  implements IPayable {
     constructor(public config: IPerson) {
+    }
+    increasePay(percent: number): boolean{
+        console.log("Increasing salary by " + percent)
+        return true;
     }
 }
 
