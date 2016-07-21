@@ -98,6 +98,7 @@ button.onclick = function() {
 var workers: Array<Peeps> = [];
 workers[0] = new Peeps();
 workers[1] = new Employee();
+workers[2] = new Employee();
 //workers[2] = new Animal();  // compile-time error
 
 document.body.innerHTML = Greeter.greet2(user);
