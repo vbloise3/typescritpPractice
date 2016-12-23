@@ -8,8 +8,8 @@ System.register([], function(exports_1, context_1) {
             /**
              * Created by vincebloise on 7/20/16.
              */
-            class AppComponent {
-            }
+            AppComponent = class AppComponent {
+            };
             exports_1("AppComponent", AppComponent);
         }
     }

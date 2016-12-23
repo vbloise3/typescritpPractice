@@ -21,7 +21,7 @@ System.register(['@angular/core', './hero.service'], function(exports_1, context
                 hero_service_1 = hero_service_1_1;
             }],
         execute: function() {
-            let HeroListComponent = class HeroListComponent {
+            HeroListComponent = class HeroListComponent {
                 constructor(service) {
                     this.service = service;
                 }

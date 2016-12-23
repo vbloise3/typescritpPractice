@@ -27,7 +27,7 @@ class Greeter {
         this.person = personParm;
     }
     greet() {
-        return "Hello, " + this.person.config.firstName.toString() + " " + this.person.config.lastName.toString();
+        return "Hello, " + this.person.config.firstName + " " + this.person.config.lastName;
     }
     static greet2(personParm: Person) {
         return "Hello, " + personParm.toString() + " " + personParm.toString() + "<br/>";
