@@ -27,7 +27,7 @@ class Greeter {
         this.person = personParm;
     }
     greet() {
-        return "Hello, " + this.person.toString() + " " + this.person.toString();
+        return "Hello, " + this.person.config.firstName.toString() + " " + this.person.config.lastName.toString();
     }
     static greet2(personParm: Person) {
         return "Hello, " + personParm.toString() + " " + personParm.toString() + "<br/>";
@@ -79,8 +79,8 @@ var tax: number = calcTax(50000); //using default state parameter value and no d
 var tax2: number = calcTax(60000, 'NJ', 3);
 
 var aPerson: IPerson = {
-    firstName: "John",
-    lastName: "Smith",
+    firstName: "Jack",
+    lastName: "Ass",
     age: 29
 }
 
@@ -88,6 +88,7 @@ var user = new Person(aPerson);
 console.log("Last name?: " + user.config.lastName + " First Name?: " + user.config.firstName);
 
 var greeter = new Greeter(user);
+console.log(greeter.greet());
 
 /*var button = document.createElement('button');
 button.textContent = "Say Yo!";
